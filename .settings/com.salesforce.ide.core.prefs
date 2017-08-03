@@ -1,0 +1,14 @@
+eclipse.preferences.version=1
+endpointApiVersion=36.0
+endpointEnvironment=Production/Developer Edition
+endpointServer=login.salesforce.com
+httpsProtocol=true
+ideVersion=36.0
+keependpoint=false
+metadataFormatVersion=36.0
+namespacePrefix=abexp
+packageName=unpackaged
+preferToolingDeployment=true
+projectIdentifier=IDE7504046572493688603
+readTimeout=400
+username=abe.parvatiyar@gmail.com

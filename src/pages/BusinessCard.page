@@ -1,0 +1,27 @@
+<apex:page docType="html-5.0" title="Create Account">
+    
+    <apex:remoteObjects >
+        <apex:remoteObjectModel name="Account" fields="Id,Name"/>
+    </apex:remoteObjects>
+    
+    <div class="mypage">
+        Account Name:
+        <input type="text" id="accountName"/>
+        <button onclick="createAccount()">Create Account</button>
+    </div>
+    
+    <script>
+        function createAccount() {
+            var accountName = document.getElementById("accountName").value;
+            var account = new SObjectModel.Account();
+            account.create({Name: accountName}, function(error, records) {
+                if (error) {
+                    alert(error.message);
+                } else {
+                   sforce.one.navigateToSObject(records[0]);
+                }
+            });
+        }
+    </script>
+    
+</apex:page>

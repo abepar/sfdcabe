@@ -1,0 +1,42 @@
+<apex:page showHeader="false" standardStylesheets="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">    
+
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">    
+
+<head>
+  <title>Salesforce Lightning Design System Trailhead Module</title>
+  <apex:stylesheet value="{!URLFOR($Resource.SLDS0101, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+</head>    
+
+<body>    
+
+  <!-- REQUIRED SLDS WRAPPER -->
+  <div class="slds">    
+
+    <!-- MASTHEAD -->
+    <p class="slds-text-heading--label slds-m-bottom--small">
+      Salesforce Lightning Design System Trailhead Module
+    </p>
+    <!-- / MASTHEAD -->    
+
+    <!-- PRIMARY CONTENT WRAPPER -->
+    <div class="myapp">    
+
+      <!-- SECTION - BADGE COMPONENTS -->
+      <section aria-labelledby="badges">
+        <h2 id="badges" class="slds-text-heading--large slds-m-vertical--large">Badges</h2>
+        <div>
+          <span class="slds-badge">Badge</span>
+          <span class="slds-badge slds-theme--inverse">Badge</span>
+        </div>
+      </section>
+      <!-- / SECTION - BADGE COMPONENTS -->    
+
+    </div>
+    <!-- / PRIMARY CONTENT WRAPPER -->    
+
+  </div>
+  <!-- / REQUIRED SLDS WRAPPER -->    
+
+</body>
+</html>
+</apex:page>

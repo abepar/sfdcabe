@@ -1,0 +1,4 @@
+<apex:page standardController="Account">
+    <apex:detail />
+    <apex:relatedList list="Cases" />
+</apex:page>

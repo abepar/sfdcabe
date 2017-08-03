@@ -1,0 +1,37 @@
+<apex:page >
+    <script>
+        var sd,sd2;
+        function openSimpleDialog(){
+            var htmlBody = "<p align='center'><img src='/img/msg_icons/confirm32.png' style='margin:0 5px;'/></p><p align='center'>This is awesome!</p><p align='center'><br /><button class='btn' onclick='sd.hide(); return false;'>cancel</button></p>";
+            sd = showSimpleDialog('SimpleDialog',htmlBody,false);
+        }
+        
+        function openSimpleDialogDraggable(){
+            var htmlBody = "<p align='center'><img src='/img/msg_icons/confirm32.png' style='margin:0 5px;'/></p><p align='center'>Hey! Look I am draggable</p><p align='center'><br /><button class='btn' onclick='sd2.hide(); return false;'>cancel</button></p>";
+            sd2 = showSimpleDialog('SimpleDialog',htmlBody,true);
+        }
+        
+        /*Simple dialog reusable function*/
+        function showSimpleDialog(title,htmlBody,isDraggable){    
+           var sd = new SimpleDialog("SD"+Dialogs.getNextId(), isDraggable);    
+           sd.setTitle(title);    
+           sd.createDialog();     
+           sd.setContentInnerHTML(htmlBody);    
+           sd.show();   
+           return sd;   
+        }
+    </script>
+    <apex:form >
+        <apex:outputPanel layout="block" style="min-height:400px;">
+            <c:AllDemoLink />
+            <apex:sectionHeader title="Demo of SimpleDialog" subtitle="SimpleDialog"/>
+            <apex:pageBlock >
+                <apex:pageBlockButtons >
+                    <apex:commandButton value="Launch SimpleDialog" onclick="openSimpleDialog();return false;"/>
+                    <apex:commandButton value="Launch SimpleDialog Draggable" onclick="openSimpleDialogDraggable();return false;"/>
+                </apex:pageBlockButtons>
+                <b>Press the button to launch the popup</b>
+            </apex:pageBlock>
+        </apex:outputPanel>
+    </apex:form>
+</apex:page>

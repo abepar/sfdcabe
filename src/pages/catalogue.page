@@ -1,0 +1,26 @@
+<apex:page standardcontroller="Merchandise__c" recordSetVar="products">
+    
+    
+    <apex:pageBlock title="Our Products">
+        
+        <apex:pageBlockSection columns="1">
+            
+    <apex:pageBlockSection >
+        <apex:pageBlockTable value="{!products}" var="pitem">
+            <apex:column headerValue="Product">
+                <apex:outputText value="{!pitem.Name}"/>
+            </apex:column>
+                <apex:column headerValue="Description" >
+                    <apex:outputText value="{pitem.Description__c}"/>
+            </apex:column>
+            <apex:column headerValue="Price">
+                <apex:outputText value="{!pitem.Price__c}"/>
+            </apex:column>
+        </apex:pageBlockTable>
+            
+        
+    </apex:pageBlockSection>
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    
+</apex:page>

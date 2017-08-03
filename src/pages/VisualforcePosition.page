@@ -1,0 +1,6 @@
+<apex:page standardController="End_Client__c">
+  <apex:detail > These are for all End Clients who have had a Salesforce Requirement</apex:detail>
+  <apex:tabPanel >Yess</apex:tabPanel>
+  
+  
+</apex:page>

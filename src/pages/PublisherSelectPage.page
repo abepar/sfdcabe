@@ -1,0 +1,31 @@
+<apex:page standardController="Ignite_Vendor__c" extensions="PublisherSelectController,IgniteVendorService,IgniteVendorSelector"
+    recordSetVar="vendors" tabStyle="Publisher_Select_Page__tab">
+  <apex:pageMessages ></apex:pageMessages>
+  <apex:form >
+    <apex:pageBlock title="Publisher Select">
+      <apex:pageBlockButtons location="bottom">
+        <apex:commandButton value="Go" action="{!selectVendors}"/>
+      </apex:pageBlockButtons>
+      <apex:panelGrid columns="2">
+        <apex:outputLabel value="View: "/>
+        <apex:selectList value="{!filterId}" size="1">
+          <apex:selectOptions value="{!listviewoptions}"/>
+        </apex:selectList>
+      </apex:panelGrid>
+      <apex:pageBlockSection >
+        <apex:pageBlockTable var="vWrap" value="{!lstVendorWrappers}">
+          <apex:column headerValue="Select">
+            <apex:inputCheckbox value="{!vWrap.selected}"/>
+          </apex:column>
+          <apex:column headerValue="Name" value="{!vWrap.vendorName}"/>
+          <apex:column headerValue="Platform">
+             <a href="{!URLFOR('/'+vWrap.platform.Id)}">{!vWrap.platform.Name}</a>
+          </apex:column>
+          <apex:column headerValue="Ignite Term">
+             <a href="{!URLFOR('/'+vWrap.igniteTerm.Id)}">{!vWrap.igniteTerm.Name}</a>
+          </apex:column>
+        </apex:pageBlockTable>
+      </apex:pageBlockSection>
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>
