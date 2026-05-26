@@ -3,26 +3,16 @@ kind: Component
 
 metadata:
   name: sfdcabe
-  title: Salesforce Core Platform
-  description: >
-    Test Salesforce Project
+  description: Salesforce Project
 
   annotations:
     github.com/project-slug: abepar/sfdcabe
-
-    # If using GitHub Actions
-    backstage.io/github-actions-id: abepar/sfdcabe
-
-    # Enables TechDocs
     backstage.io/techdocs-ref: dir:.
 
   tags:
     - salesforce
     - sfdx
     - apex
-    - lightning
-    - crm
-    - metadata-api
 
   links:
     - url: https://github.com/abepar/sfdcabe
@@ -33,16 +23,10 @@ metadata:
       title: Salesforce DX
       icon: docs
 
+
 spec:
   type: service
   lifecycle: production
-
   owner: group:guest
-
-  system: crm-platform
-
-  providesApis:
-    - salesforce-metadata-api
-
-  dependsOn:
-    - resource:github
+  dependsOn: 
+    - resource:gitHub
