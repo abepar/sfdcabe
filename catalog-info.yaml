@@ -1,10 +1,48 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
+
 metadata:
   name: sfdcabe
+  title: Salesforce Core Platform
+  description: >
+    Test Salesforce Project
+
   annotations:
     github.com/project-slug: abepar/sfdcabe
+
+    # If using GitHub Actions
+    backstage.io/github-actions-id: abepar/sfdcabe
+
+    # Enables TechDocs
+    backstage.io/techdocs-ref: dir:.
+
+  tags:
+    - salesforce
+    - sfdx
+    - apex
+    - lightning
+    - crm
+    - metadata-api
+
+  links:
+    - url: https://github.com/abepar/sfdcabe
+      title: GitHub Repository
+      icon: github
+
+    - url: https://developer.salesforce.com/tools/salesforce-dx
+      title: Salesforce DX
+      icon: docs
+
 spec:
-  type: other
-  lifecycle: unknown
-  owner: abeparr
+  type: service
+  lifecycle: production
+
+  owner: group:salesforce-team
+
+  system: crm-platform
+
+  providesApis:
+    - salesforce-metadata-api
+
+  dependsOn:
+    - resource:github
