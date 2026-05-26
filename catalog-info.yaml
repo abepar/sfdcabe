@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: sfdcabe
+  annotations:
+    github.com/project-slug: abepar/sfdcabe
+spec:
+  type: other
+  lifecycle: unknown
+  owner: abeparr
